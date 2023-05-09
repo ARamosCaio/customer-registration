@@ -8,7 +8,7 @@ class Application():
         self.root = root 
         self.screen_config()
         self.screen_frames()
-        self.main_buttons()
+        self.top_frame_widgets()
         root.mainloop()
 
     def screen_config(self):
@@ -27,22 +27,26 @@ class Application():
         self.bottom_frame = Frame(self.root, bd=4, bg="#dfe3ee", highlightbackground="#759fe6", highlightthickness=3)
         self.bottom_frame.place(relx=0.02, rely=0.5, relwidth=0.96, relheight=0.46)
     
-    def main_buttons(self):
+    def top_frame_widgets(self):
         self.clear_btn = Button(self.top_frame, text="Limpar")
-        self.clear_btn.place(relx=0.05, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
         
         self.search_btn = Button(self.top_frame, text="Procurar")
-        self.search_btn.place(relx=0.175, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.search_btn.place(relx=0.3, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.new_btn = Button(self.top_frame, text="Novo")
-        self.new_btn.place(relx=0.55, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.new_btn.place(relx=0.6, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.change_btn = Button(self.top_frame, text="Alterar")
-        self.change_btn.place(relx=0.675, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.change_btn.place(relx=0.7, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.delete_btn = Button(self.top_frame, text="Apagar")
         self.delete_btn.place(relx=0.8, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        
+        self.code_label = Label(self.top_frame, text="Código")
+        self.code_label.place(relx=0.05, rely=0.05)
+
+        self.code_insert = Entry(self.top_frame)
+        self.code_insert.place(relx=0.05, rely=0.15, relwidth=0.08, relheight=0.1)
 
 Application()
