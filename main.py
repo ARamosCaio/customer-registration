@@ -29,9 +29,20 @@ class Application():
     
     def main_buttons(self):
         self.clear_btn = Button(self.top_frame, text="Limpar")
-        self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.1)
+        self.clear_btn.place(relx=0.05, rely=0.1, relwidth=0.1, relheight=0.15)
         
         self.search_btn = Button(self.top_frame, text="Procurar")
-        self.search_btn.place(relx=0.4, rely=0.1, relwidth=0.1, relheight=0.1)
+        self.search_btn.place(relx=0.25, rely=0.1, relwidth=0.1, relheight=0.15)
+
+        self.new_btn = Button(self.top_frame, text="Novo")
+        self.new_btn.place(relx=0.45, rely=0.1, relwidth=0.1, relheight=0.15)
+
+        self.change_btn = Button(self.top_frame, text="Alterar")
+        self.change_btn.place(relx=0.65, rely=0.1, relwidth=0.1, relheight=0.15)
+
+        self.delete_btn = Button(self.top_frame, text="Apagar")
+        self.delete_btn.place(relx=0.85, rely=0.1, relwidth=0.1, relheight=0.15)
+
+        
 
 Application()
