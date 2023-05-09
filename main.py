@@ -8,6 +8,7 @@ class Application():
         self.root = root 
         self.screen_config()
         self.screen_frames()
+        self.main_buttons()
         root.mainloop()
 
     def screen_config(self):
@@ -25,5 +26,12 @@ class Application():
 
         self.bottom_frame = Frame(self.root, bd=4, bg="#dfe3ee", highlightbackground="#759fe6", highlightthickness=3)
         self.bottom_frame.place(relx=0.02, rely=0.5, relwidth=0.96, relheight=0.46)
+    
+    def main_buttons(self):
+        self.clear_btn = Button(self.top_frame, text="Limpar")
+        self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.1)
+        
+        self.search_btn = Button(self.top_frame, text="Procurar")
+        self.search_btn.place(relx=0.4, rely=0.1, relwidth=0.1, relheight=0.1)
 
 Application()
