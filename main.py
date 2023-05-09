@@ -32,16 +32,16 @@ class Application():
         self.clear_btn.place(relx=0.05, rely=0.1, relwidth=0.1, relheight=0.15)
         
         self.search_btn = Button(self.top_frame, text="Procurar")
-        self.search_btn.place(relx=0.25, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.search_btn.place(relx=0.175, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.new_btn = Button(self.top_frame, text="Novo")
-        self.new_btn.place(relx=0.45, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.new_btn.place(relx=0.55, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.change_btn = Button(self.top_frame, text="Alterar")
-        self.change_btn.place(relx=0.65, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.change_btn.place(relx=0.675, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.delete_btn = Button(self.top_frame, text="Apagar")
-        self.delete_btn.place(relx=0.85, rely=0.1, relwidth=0.1, relheight=0.15)
+        self.delete_btn.place(relx=0.8, rely=0.1, relwidth=0.1, relheight=0.15)
 
         
 
