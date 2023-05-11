@@ -57,4 +57,18 @@ class Application():
         self.name_insert = Entry(self.top_frame)
         self.name_insert.place(relx=0.05, rely=0.45, relwidth=0.8, relheight=0.1)
 
+
+        self.phone_label = Label(self.top_frame, text="Telefone")
+        self.phone_label.place(relx=0.05, rely=0.6)
+
+        self.phone_insert = Entry(self.top_frame)
+        self.phone_insert.place(relx=0.05, rely=0.7, relwidth=0.4, relheight=0.1)
+
+
+        self.city_label = Label(self.top_frame, text="Cidade")
+        self.city_label.place(relx=0.5, rely=0.6)
+
+        self.city_insert = Entry(self.top_frame)
+        self.city_insert.place(relx=0.5, rely=0.7, relwidth=0.4, relheight=0.1)
+
 Application()
