@@ -44,28 +44,28 @@ class Application():
         self.delete_btn.place(relx=0.8, rely=0.1, relwidth=0.1, relheight=0.15)
 
 
-        self.code_label = Label(self.top_frame, text="Código", bg="#dfe3ee")
+        self.code_label = Label(self.top_frame, text="Código", bg="#dfe3ee", fg="#107db2")
         self.code_label.place(relx=0.05, rely=0.05)
 
         self.code_insert = Entry(self.top_frame)
         self.code_insert.place(relx=0.05, rely=0.15, relwidth=0.08, relheight=0.1)
 
         
-        self.name_label = Label(self.top_frame, text="Nome", bg="#dfe3ee")
+        self.name_label = Label(self.top_frame, text="Nome", bg="#dfe3ee",fg="#107db2")
         self.name_label.place(relx=0.05, rely=0.35)
 
         self.name_insert = Entry(self.top_frame)
         self.name_insert.place(relx=0.05, rely=0.45, relwidth=0.8, relheight=0.1)
 
 
-        self.phone_label = Label(self.top_frame, text="Telefone", bg="#dfe3ee")
+        self.phone_label = Label(self.top_frame, text="Telefone", bg="#dfe3ee", fg="#107db2")
         self.phone_label.place(relx=0.05, rely=0.6)
 
         self.phone_insert = Entry(self.top_frame)
         self.phone_insert.place(relx=0.05, rely=0.7, relwidth=0.4, relheight=0.1)
 
 
-        self.city_label = Label(self.top_frame, text="Cidade", bg="#dfe3ee")
+        self.city_label = Label(self.top_frame, text="Cidade", bg="#dfe3ee", fg="#107db2")
         self.city_label.place(relx=0.5, rely=0.6)
 
         self.city_insert = Entry(self.top_frame)
