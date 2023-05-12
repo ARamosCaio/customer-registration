@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 
 
 root = Tk()
@@ -70,5 +71,8 @@ class Application():
 
         self.city_insert = Entry(self.top_frame)
         self.city_insert.place(relx=0.5, rely=0.7, relwidth=0.4, relheight=0.1)
+
+    def bottom_frame_widgets(self):
+        self.list = ttk.Treeview(self.bottom_frame)
 
 Application()
