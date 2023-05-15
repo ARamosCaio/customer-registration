@@ -10,6 +10,7 @@ class Application():
         self.screen_config()
         self.screen_frames()
         self.top_frame_widgets()
+        self.bottom_frame_widgets()
         root.mainloop()
 
     def screen_config(self):
@@ -73,6 +74,19 @@ class Application():
         self.city_insert.place(relx=0.5, rely=0.7, relwidth=0.4, relheight=0.1)
 
     def bottom_frame_widgets(self):
-        self.list = ttk.Treeview(self.bottom_frame)
+        self.list = ttk.Treeview(self.bottom_frame, height=3, columns=("col1", "col2", "col3", "col4"))
+        self.list.heading("#0", text="")
+        self.list.heading("#1", text="Código")
+        self.list.heading("#2", text="Nome")
+        self.list.heading("#3", text="Telefone")
+        self.list.heading("#4", text="Cidade")
+        
+        self.list.column("#0", width=1)
+        self.list.column("#1", width=50)
+        self.list.column("#2", width=200)
+        self.list.column("#3", width=125)
+        self.list.column("#4", width=125)
+
+        self.list.place(relx=0.01, rely=0.1, relwidth=0.95, relheight=0.85)
 
 Application()
