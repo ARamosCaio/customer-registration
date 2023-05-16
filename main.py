@@ -4,7 +4,13 @@ from tkinter import ttk
 
 root = Tk()
 
-class Application():
+class Functions():
+    def clear(self):
+        self.code_insert.delete(0, END)
+        self.name_insert.delete(0, END)
+        self.phone_insert.delete(0, END)
+        self.city_insert.delete(0, END)
+class Application(Functions):
     def __init__(self):
         self.root = root 
         self.screen_config()
@@ -30,7 +36,7 @@ class Application():
         self.bottom_frame.place(relx=0.02, rely=0.5, relwidth=0.96, relheight=0.46)
     
     def top_frame_widgets(self):
-        self.clear_btn = Button(self.top_frame, text="Limpar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
+        self.clear_btn = Button(self.top_frame, text="Limpar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.clear)
         self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
         
         self.search_btn = Button(self.top_frame, text="Procurar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
