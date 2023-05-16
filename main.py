@@ -89,4 +89,8 @@ class Application():
 
         self.list.place(relx=0.01, rely=0.1, relwidth=0.95, relheight=0.85)
 
+        self.scrollbar = Scrollbar(self.bottom_frame, orient="vertical")
+        self.list.configure(yscrollcommand=self.scrollbar.set)
+        self.scrollbar.place(relx=0.96, rely=0.1, relwidth=0.03, relheight=0.85)
+
 Application()
