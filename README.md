@@ -6,6 +6,7 @@ Using python tkinter to create a customer registration window which save the cus
 
 - [Python](https://www.python.org/downloads/)
 - [Tkinter](https://docs.python.org/3/library/tk.html)
+- [SQLite](https://www.sqlite.org/index.html)
 
 ## How To Run It
 
