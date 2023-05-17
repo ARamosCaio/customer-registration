@@ -29,9 +29,24 @@ class Functions():
             customer_city CHAR(40)
             );
         """)
-        
+
         self.connect.commit(); print("BD criado")
         self.db_disc()
+    
+    def add_customer(self):
+        self.code = self.code_insert.get()
+        self.name = self.name_insert.get()
+        self.phone = self.phone_insert.get()
+        self.city = self.city_insert.get()
+
+        self.db_connect()
+        
+        self.cursor.execute(""" INSERT INTO clientes (customer_name, customer_phone, customer_city) VALUES (?, ?, ?)""", (self.name, self.phone, self.city))
+
+        self.connect.commit()
+        self.db_disc
+        
+        
 class Application(Functions):
     def __init__(self):
         self.root = root 
