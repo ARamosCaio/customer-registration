@@ -41,12 +41,23 @@ class Functions():
 
         self.db_connect()
         
-        self.cursor.execute(""" INSERT INTO clientes (customer_name, customer_phone, customer_city) VALUES (?, ?, ?)""", (self.name, self.phone, self.city))
+        self.cursor.execute(""" INSERT INTO customers (customer_name, customer_phone, customer_city) VALUES (?, ?, ?)""", (self.name, self.phone, self.city))
 
         self.connect.commit()
         self.db_disc
+        self.select_customer()
+        self.clear()
         
         
+    def select_customer(self):
+        self.list.delete(*self.list.get_children())
+        self.db_connect()
+        list = self.cursor.execute(""" SELECT codes, customer_name, customer_phone, customer_city FROM customers ORDER BY customer_name ASC; """)
+
+        for i in list:
+            self.list.insert("", END, values=i)
+        
+        self.db_disc()
 class Application(Functions):
     def __init__(self):
         self.root = root 
@@ -55,6 +66,7 @@ class Application(Functions):
         self.top_frame_widgets()
         self.bottom_frame_widgets()
         self.db_create()
+        self.select_customer()
         root.mainloop()
 
     def screen_config(self):
@@ -80,7 +92,7 @@ class Application(Functions):
         self.search_btn = Button(self.top_frame, text="Procurar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
         self.search_btn.place(relx=0.3, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.new_btn = Button(self.top_frame, text="Novo", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
+        self.new_btn = Button(self.top_frame, text="Novo", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.add_customer)
         self.new_btn.place(relx=0.6, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.change_btn = Button(self.top_frame, text="Alterar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
