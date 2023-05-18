@@ -58,6 +58,9 @@ class Functions():
             self.list.insert("", END, values=i)
         
         self.db_disc()
+
+    def double_click(self):
+        self.clear()
 class Application(Functions):
     def __init__(self):
         self.root = root 
