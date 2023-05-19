@@ -81,7 +81,7 @@ class Functions():
 
         self.db_connect()
 
-        self.cursor.execute(""" DELETE from customers WHERE code = ? """, (self.code))
+        self.cursor.execute(""" DELETE from customers WHERE codes = ? """, (self.code))
         self.connect.commit()
 
         self.db_disc()
@@ -129,7 +129,7 @@ class Application(Functions):
         self.change_btn = Button(self.top_frame, text="Alterar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
         self.change_btn.place(relx=0.7, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.delete_btn = Button(self.top_frame, text="Apagar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
+        self.delete_btn = Button(self.top_frame, text="Apagar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.delete_customer)
         self.delete_btn.place(relx=0.8, rely=0.1, relwidth=0.1, relheight=0.15)
 
 
