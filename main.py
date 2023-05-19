@@ -111,6 +111,7 @@ class Application(Functions):
         self.bottom_frame_widgets()
         self.db_create()
         self.select_customer()
+        self.menu()
         root.mainloop()
 
     def screen_config(self):
@@ -121,7 +122,6 @@ class Application(Functions):
         self.root.maxsize(width=900, height=700)
         self.root.minsize(width=500, height=400)
     
-     
     def screen_frames(self):
         self.top_frame = Frame(self.root, bd=4, bg="#dfe3ee", highlightbackground="#759fe6", highlightthickness=3)
         self.top_frame.place(relx=0.02, rely=0.02, relwidth=0.96, relheight=0.46)
@@ -174,6 +174,7 @@ class Application(Functions):
         self.city_insert.place(relx=0.5, rely=0.7, relwidth=0.4, relheight=0.1)
 
     def bottom_frame_widgets(self):
+
         self.list = ttk.Treeview(self.bottom_frame, height=3, columns=("col1", "col2", "col3", "col4"))
         self.list.heading("#0", text="")
         self.list.heading("#1", text="Código")
@@ -193,4 +194,20 @@ class Application(Functions):
         self.list.configure(yscrollcommand=self.scrollbar.set)
         self.scrollbar.place(relx=0.96, rely=0.1, relwidth=0.03, relheight=0.85)
         self.list.bind("<Double-1>", self.double_click)
+
+    def menu(self):
+        menu_bar = Menu(self.root)
+        self.root.config(menu = menu_bar)
+        first_menu = Menu(menu_bar)
+        second_menu = Menu(menu_bar)
+
+        def quit():
+            self.root.destroy()
+        
+        menu_bar.add_cascade(label = "Options", menu = first_menu)
+        menu_bar.add_cascade(label = "Sobre", menu = second_menu)
+
+        first_menu.add_command(label="Sair", command=quit)
+        second_menu.add_command(label="Limpar", command=self.clear)
+
 Application()
