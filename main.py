@@ -89,6 +89,19 @@ class Functions():
         self.clear()
         self.select_customer()
 
+    def change_customer(self):
+
+        self.code = self.code_insert.get()
+        self.name = self.name_insert.get()
+        self.phone = self.phone_insert.get()
+        self.city = self.city_insert.get()
+
+        self.db_connect()
+        self.cursor.execute("""UPDATE customers SET customer_name = ?, customer_phone = ?, customer_city = ? WHERE codes = ? """, (self.name, self.phone, self.city, self.code))
+        self.connect.commit()
+        self.db_disc()
+        self.select_customer()
+        self.clear()
 class Application(Functions):
     def __init__(self):
         self.root = root 
@@ -126,7 +139,7 @@ class Application(Functions):
         self.new_btn = Button(self.top_frame, text="Novo", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.add_customer)
         self.new_btn.place(relx=0.6, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.change_btn = Button(self.top_frame, text="Alterar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
+        self.change_btn = Button(self.top_frame, text="Alterar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.change_customer)
         self.change_btn.place(relx=0.7, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.delete_btn = Button(self.top_frame, text="Apagar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.delete_customer)
