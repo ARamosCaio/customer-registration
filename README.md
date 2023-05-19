@@ -10,6 +10,8 @@ Using python tkinter to create a customer registration window which save the cus
 
 ## How To Run It
 
+Run:
+
 ```shell
 python main.py
 ```
