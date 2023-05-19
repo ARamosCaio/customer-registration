@@ -16,5 +16,8 @@ Run:
 python main.py
 ```
 
+Then insert the customer data.
+
 ## What I've Learned
 - How to use tkinter to create a user interface
+- How to create events using tkinter
