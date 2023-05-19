@@ -204,7 +204,7 @@ class Application(Functions):
         def quit():
             self.root.destroy()
         
-        menu_bar.add_cascade(label = "Options", menu = first_menu)
+        menu_bar.add_cascade(label = "Opções", menu = first_menu)
         menu_bar.add_cascade(label = "Sobre", menu = second_menu)
 
         first_menu.add_command(label="Sair", command=quit)
