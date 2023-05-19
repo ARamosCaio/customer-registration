@@ -20,6 +20,7 @@ class Functions():
         self.connect.close()
     
     def db_create(self):
+
         self.db_connect(); print("Conectando ao BD")
 
         self.cursor.execute(""" CREATE TABLE IF NOT EXISTS customers (
@@ -34,6 +35,7 @@ class Functions():
         self.db_disc()
     
     def add_customer(self):
+        
         self.code = self.code_insert.get()
         self.name = self.name_insert.get()
         self.phone = self.phone_insert.get()
@@ -48,7 +50,6 @@ class Functions():
         self.select_customer()
         self.clear()
         
-        
     def select_customer(self):
         self.list.delete(*self.list.get_children())
         self.db_connect()
@@ -59,8 +60,35 @@ class Functions():
         
         self.db_disc()
 
-    def double_click(self):
+    def double_click(self, event):
+
         self.clear()
+        self.list.selection()
+
+        for i in self.list.selection():
+            col1, col2, col3, col4 = self.list.item(i, "values")
+            self.code_insert.insert(END, col1)
+            self.name_insert.insert(END, col2)
+            self.phone_insert.insert(END, col3)
+            self.city_insert.insert(END, col4)
+
+    def delete_customer(self):
+
+        self.code = self.code_insert.get()
+        self.name = self.name_insert.get()
+        self.phone = self.phone_insert.get()
+        self.city = self.city_insert.get()
+
+        self.db_connect()
+
+        self.cursor.execute(""" DELETE from customers WHERE code = ? """, (self.code))
+        self.connect.commit()
+
+        self.db_disc()
+
+        self.clear()
+        self.select_customer()
+
 class Application(Functions):
     def __init__(self):
         self.root = root 
@@ -151,5 +179,5 @@ class Application(Functions):
         self.scrollbar = Scrollbar(self.bottom_frame, orient="vertical")
         self.list.configure(yscrollcommand=self.scrollbar.set)
         self.scrollbar.place(relx=0.96, rely=0.1, relwidth=0.03, relheight=0.85)
-
+        self.list.bind("<Double-1>", self.double_click)
 Application()
