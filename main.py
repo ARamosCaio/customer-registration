@@ -102,6 +102,18 @@ class Functions():
         self.db_disc()
         self.select_customer()
         self.clear()
+
+    def search_customer(self):
+        self.db_connect()
+        self.list.delete(*self.list.get_children())
+        self.name_insert.insert(END, '%')
+        name = self.name_insert.get()
+        self.cursor.execute("""SELECT codes, customer_name, customer_phone, customer_city FROM customers WHERE customer_name LIKE '%s' ORDER BY customer_name ASC""" % name)
+        search_name = self.cursor.fetchall()
+        for i in search_name:
+            self.list.insert("", END, values=i)
+        self.clear()
+        self.db_disc()
 class Application(Functions):
     def __init__(self):
         self.root = root 
@@ -133,7 +145,7 @@ class Application(Functions):
         self.clear_btn = Button(self.top_frame, text="Limpar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.clear)
         self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
         
-        self.search_btn = Button(self.top_frame, text="Procurar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"))
+        self.search_btn = Button(self.top_frame, text="Procurar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.search_customer)
         self.search_btn.place(relx=0.3, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.new_btn = Button(self.top_frame, text="Novo", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.add_customer)
