@@ -16,7 +16,7 @@ Run:
 python main.py
 ```
 
-Then insert the customer data.
+Then insert the customer data on the fields and click on "novo"
 
 ## What I've Learned
 - How to use tkinter to create a user interface
