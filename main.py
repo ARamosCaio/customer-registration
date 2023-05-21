@@ -143,8 +143,8 @@ class Application(Functions):
     
     def top_frame_widgets(self):
 
-        self.canvas = Canvas(self.top_frame, bd=0, bg='#1e3743', highlightbackground = 'grey', highlightthickness = 3)
-        self.canvas.place(relx=0.19, rely=0.08, relwidth=0.22, relheight=0.19)
+        self.canvas = Canvas(self.top_frame, bd=0, bg='#1e3743', highlightbackground = 'gray', highlightthickness = 2)
+        self.canvas.place(relx=0.195, rely=0.09, relwidth=0.21, relheight=0.18)
 
         self.clear_btn = Button(self.top_frame, text="Limpar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.clear)
         self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
