@@ -149,16 +149,16 @@ class Application(Functions):
         self.clear_btn = Button(self.top_frame, text="Limpar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), activebackground='#108ecb', activeforeground='white', command=self.clear)
         self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
         
-        self.search_btn = Button(self.top_frame, text="Procurar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.search_customer)
+        self.search_btn = Button(self.top_frame, text="Procurar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), activebackground='#108ecb', activeforeground='white', command=self.search_customer)
         self.search_btn.place(relx=0.3, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.new_btn = Button(self.top_frame, text="Novo", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.add_customer)
+        self.new_btn = Button(self.top_frame, text="Novo", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), activebackground='#108ecb', activeforeground='white', command=self.add_customer)
         self.new_btn.place(relx=0.6, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.change_btn = Button(self.top_frame, text="Alterar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.change_customer)
+        self.change_btn = Button(self.top_frame, text="Alterar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), activebackground='#108ecb', activeforeground='white', command=self.change_customer)
         self.change_btn.place(relx=0.7, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.delete_btn = Button(self.top_frame, text="Apagar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), command=self.delete_customer)
+        self.delete_btn = Button(self.top_frame, text="Apagar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), activebackground='#108ecb', activeforeground='white', command=self.delete_customer)
         self.delete_btn.place(relx=0.8, rely=0.1, relwidth=0.1, relheight=0.15)
 
 
