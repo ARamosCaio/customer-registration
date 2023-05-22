@@ -24,7 +24,7 @@ class Functions():
         self.db_connect(); print("Conectando ao BD")
 
         self.cursor.execute(""" CREATE TABLE IF NOT EXISTS customers (
-            codes  INTEGER PRIMARY KEY,
+            codes INTEGER PRIMARY KEY,
             customer_name CHAR(40) NOT NULL,
             customer_phone INTEGER(20),
             customer_city CHAR(40)
@@ -79,9 +79,11 @@ class Functions():
         self.phone = self.phone_insert.get()
         self.city = self.city_insert.get()
 
+
+
         self.db_connect()
 
-        self.cursor.execute(""" DELETE from customers WHERE codes = ? """, (self.code))
+        self.cursor.execute(""" DELETE from customers WHERE codes = ? """, str(self.code))
         self.connect.commit()
 
         self.db_disc()
@@ -143,8 +145,6 @@ class Application(Functions):
     
     def top_frame_widgets(self):
 
-        self.canvas = Canvas(self.top_frame, bd=0, bg='#1e3743', highlightbackground = 'gray', highlightthickness = 2)
-        self.canvas.place(relx=0.195, rely=0.09, relwidth=0.21, relheight=0.18)
 
         self.clear_btn = Button(self.top_frame, text="Limpar", bd=2, bg="#107db2", foreground="white", font=("verdana", 9, "bold"), activebackground='#108ecb', activeforeground='white', command=self.clear)
         self.clear_btn.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
@@ -192,7 +192,7 @@ class Application(Functions):
     def bottom_frame_widgets(self):
 
         self.list = ttk.Treeview(self.bottom_frame, height=3, columns=("col1", "col2", "col3", "col4"))
-        self.list.heading("#0", text="")
+        self.list.heading("#0")
         self.list.heading("#1", text="Código")
         self.list.heading("#2", text="Nome")
         self.list.heading("#3", text="Telefone")
